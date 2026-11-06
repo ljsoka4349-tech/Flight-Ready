@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a1222">
+  <title>Flight Ready · 사용 설명서</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/guide.css">
+</head>
+<body>
+  <main class="screen guide">
+    <header class="top">
+      <a class="brand" href="index.html">FLIGHT<span>READY</span></a>
+      <a class="icon-btn" href="index.html">훈련 시작 →</a>
+    </header>
+
+    <h1 class="h1">사용 설명서</h1>
+    <p class="muted">객실 사고사례 훈련 앱을 쓰는 방법입니다.</p>
+
+    <nav class="tabs" role="tablist" aria-label="설명서 구분">
+      <button role="tab" id="tab-learner" aria-controls="learner" aria-selected="true">교육생용</button>
+      <button role="tab" id="tab-instructor" aria-controls="instructor" aria-selected="false" tabindex="-1">교관·관리자용</button>
+    </nav>
+
+    <!-- ============ 교육생용 ============ -->
+    <section id="learner" role="tabpanel" aria-labelledby="tab-learner">
+      <nav class="toc" aria-label="목차">
+        <a href="#about">앱 소개</a>
+        <a href="#start">시작하기</a>
+        <a href="#screens">화면별 사용법</a>
+        <a href="#flow">학습 흐름과 이수 기준</a>
+        <a href="#sound">소리·진동 설정</a>
+        <a href="#faq">자주 묻는 질문</a>
+      </nav>
+
+      <h2 class="h2" id="about">앱 소개</h2>
+      <p>Flight Ready는 실제 객실 사고 사례를 재구성한 영상을 보다가, 영상이 멈추는 순간 직접 판단해 보는 훈련용 웹앱입니다. 설치나 회원가입 없이 브라우저에서 바로 쓸 수 있습니다.</p>
+      <ul>
+        <li><b>대상</b>: 객실승무원 교육생, 항공서비스 전공 학생, 이들을 가르치는 교관</li>
+        <li><b>방식</b>: 영상 시청 → 자동 정지 → 4지선다 판단 → 해설 → 이어보기 → 학습 정리</li>
+        <li><b>현재 수록 사례</b>: 1건</li>
+      </ul>
+      <div class="table-wrap"><table>
+        <thead><tr><th>항목</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>사례 번호</td><td>객실 사고사례 #01</td></tr>
+          <tr><td>제목</td><td>착륙 충돌 후 비상탈출</td></tr>
+          <tr><td>바탕 사고</td><td>아시아나항공 214편, 2013년 7월 6일, B777-200ER, 샌프란시스코 28L 활주로</td></tr>
+          <tr><td>영상 길이</td><td>약 83초 (세로 9:16, 가로 16:9 두 가지)</td></tr>
+          <tr><td>퀴즈</td><td>3문항 (이상 징후 감지, 사용 불가 출구, 탈출 개시 판단)</td></tr>
+          <tr><td>정리 자료</td><td>핵심 교훈 카드 4장(한영 병기), 비상탈출 구령 연습</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">영상은 NTSB 공개 조사 결과를 바탕으로 도형으로 그린 교육용 재구성 애니메이션이며, 실제 사고 영상이 아닙니다. 사람 목소리나 비명은 들어 있지 않습니다.</p>
+
+      <h2 class="h2" id="start">시작하기</h2>
+      <p>교관에게 받은 주소를 휴대폰이나 PC 브라우저로 열면 바로 시작됩니다.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>항목</th><th>권장</th></tr></thead>
+        <tbody>
+          <tr><td>기기</td><td>휴대폰(세로·가로 모두 지원), 태블릿, PC</td></tr>
+          <tr><td>브라우저</td><td>최신 Chrome, Safari, Edge, Samsung Internet</td></tr>
+          <tr><td>소리</td><td>이어폰 또는 스피커 (효과음과 배경음이 학습에 포함됨)</td></tr>
+          <tr><td>네트워크</td><td>영상을 받을 수 있는 연결 (두 영상과 이미지를 합쳐 약 9MB)</td></tr>
+        </tbody>
+      </table></div>
+      <p>앱을 직접 실행하거나 배포하는 방법은 <a href="#instructor" data-tab="instructor">교관·관리자용</a>에 있습니다.</p>
+
+      <h2 class="h2" id="screens">화면별 사용법</h2>
+      <p>앱은 목록, 플레이어, 퀴즈, 학습 정리, 설정 다섯 화면으로 이루어져 있습니다.</p>
+
+      <h3>1. 목록 (처음 화면)</h3>
+      <p>사고사례 카드가 나열됩니다. 카드에는 포스터, 사례 번호와 제목, 사고 일자·기종·장소, 영상 길이, 퀴즈 문항 수가 표시됩니다. 이미 이수한 사례에는 초록색 <span class="pill grn">이수 완료</span> 표시가 붙습니다.</p>
+      <ul>
+        <li>카드를 누르면 플레이어가 열립니다.</li>
+        <li>오른쪽 위 <b>설정</b> 버튼으로 설정 창을 엽니다.</li>
+      </ul>
+
+      <h3>2. 플레이어</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>요소</th><th>설명</th></tr></thead>
+        <tbody>
+          <tr><td>← 목록</td><td>영상을 멈추고 목록으로 돌아감</td></tr>
+          <tr><td>화면 방향 표시</td><td>오른쪽 위에 ‘세로 9:16’ 또는 ‘가로 16:9’로 지금 재생 중인 영상 종류를 보여줌</td></tr>
+          <tr><td>가운데 ▶ 버튼</td><td>처음 재생을 시작</td></tr>
+          <tr><td>영상 화면 터치</td><td>재생 / 일시정지 전환</td></tr>
+          <tr><td>진행 바와 점</td><td>점은 퀴즈가 나오는 위치. 푼 뒤에는 맞힌 문항과 틀린 문항이 다른 색으로 표시됨</td></tr>
+          <tr><td>재생 / 일시정지</td><td>영상 재생 제어. PC에서는 스페이스바로도 가능</td></tr>
+          <tr><td>시간 표시</td><td>현재 시간 / 전체 길이</td></tr>
+          <tr><td>소리 켜짐 / 소리 꺼짐</td><td>영상과 퀴즈 효과음을 한 번에 음소거. 선택은 다음에도 유지됨</td></tr>
+          <tr><td>퀴즈 n/3</td><td>지금까지 푼 퀴즈 수. 오답 복습 중에는 ‘오답 복습’으로 바뀜</td></tr>
+        </tbody>
+      </table></div>
+      <p>휴대폰을 세로에서 가로로 돌리면 가로 영상으로 바뀌고, 보던 지점부터 이어서 재생됩니다.</p>
+
+      <h3>3. 퀴즈</h3>
+      <p>영상이 정해진 장면에서 자동으로 멈추고 퀴즈 창이 뜹니다. 퀴즈를 풀기 전에는 영상이 다시 재생되지 않습니다.</p>
+      <ol>
+        <li>질문을 읽고 ①~④ 중 하나를 누릅니다. 한 번 고르면 바꿀 수 없습니다.</li>
+        <li>정답이면 <b>정답입니다</b>, 오답이면 <b>오답입니다 · 정답 ②</b>처럼 결과가 나옵니다. 정답 보기는 초록색, 내가 고른 오답은 빨간색으로 표시됩니다.</li>
+        <li>아래에 해설이 나오고, 오답이었다면 ‘왜 그 보기가 틀렸는지’도 함께 보여줍니다.</li>
+        <li><b>이어보기</b>를 누르면 영상이 다시 재생됩니다.</li>
+      </ol>
+      <div class="table-wrap"><table>
+        <thead><tr><th>순서</th><th>멈추는 시점</th><th>주제</th><th>핵심</th></tr></thead>
+        <tbody>
+          <tr><td>퀴즈 1</td><td>0:25</td><td>이상 징후 감지</td><td>자리를 뜨지 말고 본인 Brace 후 충격 구령</td></tr>
+          <tr><td>퀴즈 2</td><td>0:42</td><td>사용 불가 출구</td><td>막고(Block) 다른 출구로 재유도(Redirect)</td></tr>
+          <tr><td>퀴즈 3</td><td>0:57</td><td>탈출 개시 판단</td><td>화재 즉시 보고, 반대편 안전한 출구로 탈출 개시</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>4. 학습 정리</h3>
+      <p>영상이 끝나면 자동으로 열립니다.</p>
+      <ul>
+        <li><b>점수</b>: ‘3문항 중 n문항 정답’. 모두 맞히면 위에 <span class="pill yel">사고사례 #01 이수</span> 배지가 표시됩니다.</li>
+        <li><b>문항별 O/X</b>: 틀리거나 답하지 않은 문항 옆에 <b>장면부터 다시</b> 버튼이 있습니다.</li>
+        <li><b>핵심 교훈 카드</b>: ‹ › 버튼으로 4장을 넘겨 봅니다. 한국어와 영어가 함께 적혀 있습니다.</li>
+        <li><b>비상탈출 구령 연습</b>: ‘벨트 풀어! 짐 버려! 나와!’를 보여 주고, <b>구령 듣기</b>를 누르면 브라우저가 소리 내어 읽어 줍니다. 따라 외치며 연습하세요.</li>
+        <li><b>처음부터 다시 보기</b>: 답을 모두 지우고 새로 수강합니다.</li>
+      </ul>
+
+      <h3>5. 설정</h3>
+      <p>목록 화면의 <b>설정</b> 버튼으로 엽니다. 바꾼 값은 바로 저장되며, 각 항목은 아래 <a href="#sound">소리·진동 설정</a>에서 자세히 설명합니다.</p>
+
+      <h2 class="h2" id="flow">학습 흐름과 이수 기준</h2>
+      <p>3문항을 모두 맞히면 사고사례 #01 이수로 기록되고, 틀린 문항은 그 장면부터 다시 보고 같은 퀴즈를 다시 풀어 만회할 수 있습니다.</p>
+      <figure class="diagram">
+        <div class="diagram-scroll">
+          <svg viewBox="0 0 760 412" role="img" aria-label="세 문항을 모두 맞혀야 이수, 틀린 문항은 그 장면부터 복습">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+            </defs>
+            <g class="edges" marker-end="url(#arrow)">
+              <path d="M170 96H210" marker-end="url(#arrow)"/>
+              <path d="M360 96H400" marker-end="url(#arrow)"/>
+              <path d="M475 72V44H285V72" marker-end="url(#arrow)"/>
+              <path d="M285 120V198" marker-end="url(#arrow)"/>
+              <path d="M360 222H403" marker-end="url(#arrow)"/>
+              <path d="M547 222H575" marker-end="url(#arrow)"/>
+              <path d="M475 262V316" marker-end="url(#arrow)"/>
+              <path d="M375 352H285V246" marker-end="url(#arrow)"/>
+            </g>
+            <g class="node"><rect x="20" y="72" width="150" height="48" rx="8"/><text x="95" y="101">목록에서 사례 선택</text></g>
+            <g class="node"><rect x="210" y="72" width="150" height="48" rx="8"/><text x="285" y="101">영상 시청</text></g>
+            <g class="node"><rect x="400" y="72" width="150" height="48" rx="8"/><text x="475" y="101">자동 정지 · 퀴즈</text></g>
+            <g class="node"><rect x="210" y="198" width="150" height="48" rx="8"/><text x="285" y="227">학습 정리</text></g>
+            <g class="node"><polygon points="403,222 475,182 547,222 475,262"/><text x="475" y="226" class="sm">3문항 모두 정답?</text></g>
+            <g class="node accent"><rect x="575" y="186" width="150" height="72" rx="8"/><text x="650" y="214" class="b">사례 이수</text><text x="650" y="234" class="sm">이수 배지 표시</text><text x="650" y="250" class="sm">진행 바로 장면 이동</text></g>
+            <g class="node"><rect x="375" y="316" width="200" height="72" rx="8"/><text x="475" y="344" class="b">오답 복습</text><text x="475" y="364" class="sm">틀린 장면부터 다시 재생</text><text x="475" y="380" class="sm">같은 퀴즈 다시 풀기</text></g>
+            <g class="lbl">
+              <text x="380" y="36">해설 확인 후 이어보기 · 3회 반복</text>
+              <text x="295" y="163" text-anchor="start">영상 끝</text>
+              <text x="561" y="212">예</text>
+              <text x="485" y="294" text-anchor="start">아니오</text>
+              <text x="275" y="294" text-anchor="end">다시 학습 정리로</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>학습 흐름 · 퀴즈 3회, 이수 또는 오답 복습</figcaption>
+      </figure>
+      <ul>
+        <li><b>이수 기준</b>: 3문항 모두 정답. 오답 복습에서 답을 고치면 학습 정리에서 다시 채점되어, 모두 맞으면 그때 이수됩니다.</li>
+        <li><b>오답 복습</b>: 학습 정리에서 틀린 문항의 <b>장면부터 다시</b>를 누릅니다. 그 문항 하나만 다시 나오고, 풀고 나면 <b>학습 정리로</b> 버튼으로 돌아갑니다.</li>
+        <li><b>이수 후</b>: 목록 카드에 <b>이수 완료</b>가 붙고, 다시 볼 때는 진행 바를 눌러 원하는 장면으로 바로 이동할 수 있습니다.</li>
+      </ul>
+      <div class="table-wrap"><table>
+        <thead><tr><th>문항</th><th>복습 시작</th><th>퀴즈 정지</th></tr></thead>
+        <tbody>
+          <tr><td>퀴즈 1 · 이상 징후 감지</td><td>0:11</td><td>0:25</td></tr>
+          <tr><td>퀴즈 2 · 사용 불가 출구</td><td>0:33</td><td>0:42</td></tr>
+          <tr><td>퀴즈 3 · 탈출 개시 판단</td><td>0:48</td><td>0:57</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 class="h2" id="sound">소리·진동 설정</h2>
+      <p>충돌 장면(약 0:26)에는 큰 충돌음과 진동이 나오므로, 부담이 되는 교육생은 수강 전에 설정을 바꾸도록 안내해 주세요.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>설정</th><th>기본값</th><th>켜면</th><th>참고</th></tr></thead>
+        <tbody>
+          <tr><td>충돌 장면 진동 효과</td><td>켜짐</td><td>충돌 순간 기기가 짧게 두 번 진동</td><td>진동을 지원하는 기기(주로 안드로이드)에서만 동작. 아이폰과 PC는 진동 없음</td></tr>
+          <tr><td>충돌음 작게</td><td>꺼짐</td><td>충돌 직전부터 약 5초 동안 소리를 20%로 줄임</td><td>아이폰·아이패드는 음량 조절이 막혀 있어 그 구간만 음소거</td></tr>
+          <tr><td>퀴즈 효과음</td><td>켜짐</td><td>퀴즈가 뜨면 ‘딩’, 정답은 올라가는 두 음, 오답은 내려가는 두 음</td><td>‘소리 꺼짐’ 상태에서는 울리지 않음</td></tr>
+        </tbody>
+      </table></div>
+      <p>플레이어의 <b>소리 켜짐 / 소리 꺼짐</b> 버튼은 영상 소리와 퀴즈 효과음을 모두 끕니다. 모든 설정은 쓰고 있는 브라우저에 저장되어 다음에 열어도 유지됩니다.</p>
+      <p>강의실에서 여러 명이 함께 볼 때는 이어폰 사용을 권합니다. 하나의 화면을 프로젝터로 함께 볼 때는 충돌음 작게를 켜 두는 것이 좋습니다.</p>
+
+      <h2 class="h2" id="faq">자주 묻는 질문</h2>
+      <div class="faq">
+        <details><summary>영상을 앞으로 넘길 수 없어요</summary><p>처음 수강할 때는 일부러 막아 두었습니다. 이미 본 구간으로 되감기는 됩니다. 3문항을 모두 맞혀 이수하면 진행 바를 눌러 원하는 장면으로 이동할 수 있습니다.</p></details>
+        <details><summary>이수 표시가 사라졌어요</summary><p>이수 기록은 그 기기의 그 브라우저에만 저장됩니다. 다른 기기나 브라우저, 시크릿(개인정보 보호) 창에서 열거나 방문 기록을 지우면 보이지 않습니다.</p></details>
+        <details><summary>교관이 교육생의 점수를 볼 수 있나요?</summary><p>아니요. 점수와 이수 기록은 서버로 보내지 않습니다. 확인이 필요하면 교육생에게 학습 정리 화면(이수 배지)을 캡처해 제출하도록 안내해 주세요.</p></details>
+        <details><summary>다시 처음부터 풀고 싶어요</summary><p>학습 정리의 <b>처음부터 다시 보기</b>를 누르거나 목록에서 카드를 다시 누르면 답이 초기화됩니다. 이미 받은 이수 기록은 그대로 남습니다.</p></details>
+        <details><summary>영상이 재생되지 않아요</summary><p><code>index.html</code>을 파일로 직접 열었다면 로컬 서버나 호스팅 주소로 열어 보세요. 네트워크가 느리면 영상을 받는 데 시간이 걸릴 수 있습니다.</p></details>
+        <details><summary>진동이 안 와요</summary><p>아이폰과 PC 브라우저는 웹 진동을 지원하지 않습니다. 안드로이드에서는 설정의 진동 항목과 휴대폰 무음·진동 설정을 확인하세요.</p></details>
+        <details><summary>아이폰에서 충돌 장면 소리가 아예 안 나요</summary><p>‘충돌음 작게’가 켜져 있으면 아이폰은 그 구간만 음소거합니다. 소리를 듣고 싶다면 설정에서 끄세요.</p></details>
+        <details><summary>‘구령 듣기’가 아무 소리가 없어요</summary><p>브라우저 음성 읽기 기능을 쓰므로, 기기에 한국어 음성이 없으면 소리가 나지 않거나 다른 목소리로 읽습니다. 지원하지 않는 브라우저에서는 안내 창이 뜹니다.</p></details>
+        <details><summary>실제 사고 영상인가요?</summary><p>아닙니다. NTSB 공개 자료를 바탕으로 도형으로 그린 교육용 재구성 영상입니다.</p></details>
+      </div>
+    </section>
+
+    <!-- ============ 교관·관리자용 ============ -->
+    <section id="instructor" role="tabpanel" aria-labelledby="tab-instructor" hidden>
+      <p class="lead">사고사례는 <code>js/cases.js</code> 파일 하나에 모여 있어, 코드를 거의 건드리지 않고 문항을 고치거나 사례를 늘릴 수 있습니다.</p>
+      <nav class="toc" aria-label="목차">
+        <a href="#run">실행과 배포</a>
+        <a href="#files">파일 구성</a>
+        <a href="#edit">문항·해설 고치기</a>
+        <a href="#add">사고사례 추가하기</a>
+        <a href="#render">영상 다시 만들기</a>
+      </nav>
+
+      <h2 class="h2" id="run">실행과 배포</h2>
+      <p>앱은 정적 파일만으로 동작하므로 빌드 과정이 없습니다.</p>
+      <h3>내 컴퓨터에서 실행하기</h3>
+      <ol>
+        <li>저장소 폴더에서 터미널을 열고 아래 명령을 실행합니다.</li>
+        <li>브라우저에서 <code>http://localhost:8000</code> 을 엽니다.</li>
+      </ol>
+      <pre><code>python3 -m http.server 8000</code></pre>
+      <p><code>index.html</code>을 파일로 바로 더블클릭해 열면 일부 브라우저에서 영상이 재생되지 않을 수 있으니 꼭 로컬 서버로 여세요.</p>
+      <h3>교육생에게 배포하기</h3>
+      <p>GitHub Pages, Netlify, Vercel 같은 정적 호스팅에 저장소 폴더를 그대로 올리면 됩니다. 이 설명서도 함께 배포되어 <code>/guide.html</code> 주소로 열리고, 앱 첫 화면의 <b>설명서</b> 버튼과 연결됩니다.</p>
+
+      <h2 class="h2" id="files">파일 구성</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>파일</th><th>역할</th></tr></thead>
+        <tbody>
+          <tr><td><code>index.html</code></td><td>화면 (목록, 플레이어, 퀴즈, 학습 정리, 설정)</td></tr>
+          <tr><td><code>guide.html</code></td><td>이 사용 설명서</td></tr>
+          <tr><td><code>css/app.css</code></td><td>디자인</td></tr>
+          <tr><td><code>css/guide.css</code></td><td>설명서 디자인</td></tr>
+          <tr><td><code>js/cases.js</code></td><td>사고사례 내용 (영상 경로, 문항·해설, 정지 시점, 교훈, 구령)</td></tr>
+          <tr><td><code>js/app.js</code></td><td>동작 (재생, 자동 정지, 채점, 복습, 저장)</td></tr>
+          <tr><td><code>media/</code></td><td>세로·가로 영상과 포스터 이미지</td></tr>
+          <tr><td><code>tools/</code></td><td>영상과 음향을 다시 만드는 스크립트</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 class="h2" id="edit">문항·해설 고치기</h2>
+      <p><code>js/cases.js</code>에서 해당 문장을 찾아 바꾸고 저장하면 됩니다. 자주 고치는 항목은 아래와 같습니다.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>항목</th><th>뜻</th></tr></thead>
+        <tbody>
+          <tr><td><code>question</code></td><td>질문</td></tr>
+          <tr><td><code>options</code></td><td>보기 4개 (순서대로 ①~④)</td></tr>
+          <tr><td><code>answer</code></td><td>정답 번호. <b>0부터 셉니다</b> (① = 0, ② = 1, ③ = 2, ④ = 3)</td></tr>
+          <tr><td><code>explanation</code></td><td>정답 해설</td></tr>
+          <tr><td><code>wrong</code></td><td>오답 보기별 ‘왜 틀렸는지’ 설명 (번호는 answer와 같은 방식)</td></tr>
+          <tr><td><code>pauseAt</code></td><td>영상이 멈추는 시점(초)</td></tr>
+          <tr><td><code>reviewFrom</code></td><td>오답 복습을 시작하는 시점(초)</td></tr>
+          <tr><td><code>lessons</code></td><td>핵심 교훈 카드 (ko 한국어, en 영어)</td></tr>
+          <tr><td><code>commands</code></td><td>비상탈출 구령 (text 한국어, en 영어)</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">탈출 구령과 승무원의 탈출 개시 권한은 항공사마다 다르므로, 수업에 쓰기 전에 소속 기관 매뉴얼에 맞게 고쳐 주세요.</p>
+
+      <h2 class="h2" id="add">사고사례 추가하기</h2>
+      <ol>
+        <li>새 영상(세로·가로)과 포스터를 <code>media/</code> 폴더에 넣습니다.</li>
+        <li><code>js/cases.js</code>의 <code>FR_CASES</code> 목록에 #01과 같은 형식의 항목을 하나 더 넣습니다. <code>id</code>는 사례마다 달라야 합니다.</li>
+        <li><code>videos.portrait</code>, <code>videos.landscape</code>에 영상 경로를, <code>duration</code>에 영상 길이(초)를, <code>impactAt</code>에 진동·충돌음 조절을 적용할 시점(초)을 적습니다.</li>
+        <li>퀴즈는 영상에서 나오는 순서대로 적습니다. 퀴즈 번호가 이 순서를 따릅니다.</li>
+        <li>저장한 뒤 앱을 새로 고침하면 목록에 새 카드가 나타납니다.</li>
+      </ol>
+
+      <h2 class="h2" id="render">영상 다시 만들기</h2>
+      <p>영상의 문구나 수치를 바꾸려면 <code>tools/render.py</code>를 고친 뒤 다시 만듭니다. Python 3, Pillow, NumPy, ffmpeg, Noto Sans CJK 한글 폰트가 필요합니다.</p>
+      <pre><code>cd tools
+python3 render.py ../media/oz214_9x16.mp4
+python3 render169.py ../media/oz214_16x9.mp4</code></pre>
+      <p>음향은 외부 음원 없이 <code>tools/soundtrack.py</code>로 합성하며, 만든 뒤 ffmpeg로 영상에 입힙니다.</p>
+      <pre><code>python3 soundtrack.py soundtrack.wav
+ffmpeg -i ../media/oz214_9x16.mp4 -i soundtrack.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 128k -shortest -movflags +faststart out.mp4</code></pre>
+      <p>장면 길이를 바꾸면 <code>js/cases.js</code>의 <code>pauseAt</code>, <code>reviewFrom</code>, <code>impactAt</code>도 함께 맞춰야 퀴즈가 제 장면에서 멈춥니다.</p>
+    </section>
+
+    <footer class="sources">
+      <h2 class="h2">출처</h2>
+      <ul>
+        <li><a href="https://ntsb.gov/news/events/Documents/Asiana%20Board%20Meeting%20Survival%20Factors.pdf" target="_blank" rel="noopener">NTSB 이사회 자료 · 생존요인 (AAR-14/01 관련)</a></li>
+        <li><a href="https://www.ntsb.gov/investigations/Pages/DCA13MA120.aspx" target="_blank" rel="noopener">NTSB 조사 페이지 DCA13MA120</a></li>
+      </ul>
+      <p class="muted small">수업에 쓰기 전에 교관이나 안전 담당자가 NTSB 보고서 원문과 대조해 내용을 확인해 주세요.</p>
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      const tabs = [...document.querySelectorAll('[role="tab"]')];
+      const ids = { learner: "learner", instructor: "instructor" };
+      const owner = (hash) => {
+        const el = hash && document.getElementById(hash);
+        if (!el) return null;
+        if (ids[hash]) return hash;
+        const panel = el.closest('[role="tabpanel"]');
+        return panel ? panel.id : null;
+      };
+      function select(id, focus) {
+        tabs.forEach((t) => {
+          const on = t.getAttribute("aria-controls") === id;
+          t.setAttribute("aria-selected", String(on));
+          t.tabIndex = on ? 0 : -1;
+          document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+          if (on && focus) t.focus();
+        });
+      }
+      tabs.forEach((t, i) => {
+        t.addEventListener("click", () => {
+          const id = t.getAttribute("aria-controls");
+          select(id);
+          history.replaceState(null, "", "#" + id);
+        });
+        t.addEventListener("keydown", (e) => {
+          if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+          const next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+          next.click(); next.focus();
+        });
+      });
+      function fromHash() {
+        const h = decodeURIComponent(location.hash.slice(1));
+        const id = owner(h);
+        if (!id) return;
+        select(id);
+        if (!ids[h]) document.getElementById(h).scrollIntoView();
+      }
+      window.addEventListener("hashchange", fromHash);
+      fromHash();
+    })();
+  </script>
+</body>
+</html>

@@ -38,7 +38,9 @@ python3 -m http.server 8000
 
 ```
 index.html        화면 (목록 · 플레이어 · 퀴즈 · 학습 정리 · 설정)
+guide.html        사용 설명서 (교육생용 · 교관·관리자용 탭). 앱 첫 화면의 '설명서' 버튼과 연결
 css/app.css       스타일
+css/guide.css     설명서 스타일
 js/cases.js       사고사례 데이터 (영상 경로, 퀴즈 문항·해설, 정지 시점, 교훈)
 js/app.js         동작 (재생, 자동 정지, 채점, 복습, 저장)
 media/            영상(세로·가로)과 포스터 이미지

@@ -30,6 +30,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .brand span { color: var(--yel); margin-left: 4px; }
 .icon-btn { background: none; border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; font-size: 15px; }
 .icon-btn:hover { border-color: var(--muted); }
+a.icon-btn { color: var(--text); text-decoration: none; }
+.top-actions { display: flex; gap: 8px; }
 .h1 { font-size: 28px; margin: 20px 0 6px; font-weight: 800; }
 .h2 { font-size: 20px; margin: 32px 0 12px; font-weight: 800; }
 
