@@ -8,7 +8,33 @@
     get(k, d) { try { const v = localStorage.getItem("fr:" + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
     set(k, v) { try { localStorage.setItem("fr:" + k, JSON.stringify(v)); } catch { /* 저장 불가 환경 */ } },
   };
-  const settings = Object.assign({ vibrate: true }, store.get("settings", {}));
+  const settings = Object.assign({ vibrate: true, softImpact: false, sfx: true, muted: false }, store.get("settings", {}));
+
+  // ---------- 효과음 (Web Audio로 짧게 합성, 파일 없음) ----------
+  let actx = null;
+  function sfx(kind) {
+    if (!settings.sfx || settings.muted) return;
+    try {
+      actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+      if (actx.state === "suspended") actx.resume();
+      const notes = {
+        open: [[523.25, 0, 0.18]],
+        ok: [[659.25, 0, 0.16], [987.77, 0.11, 0.3]],
+        no: [[311.13, 0, 0.22], [233.08, 0.14, 0.32]],
+      }[kind];
+      const now = actx.currentTime;
+      for (const [f, at, len] of notes) {
+        const o = actx.createOscillator(), g = actx.createGain();
+        o.type = kind === "no" ? "triangle" : "sine";
+        o.frequency.value = f;
+        g.gain.setValueAtTime(0.0001, now + at);
+        g.gain.exponentialRampToValueAtTime(0.18, now + at + 0.015);
+        g.gain.exponentialRampToValueAtTime(0.0001, now + at + len);
+        o.connect(g).connect(actx.destination);
+        o.start(now + at); o.stop(now + at + len + 0.05);
+      }
+    } catch { /* 오디오 미지원 환경 */ }
+  }
 
   // ---------- 상태 ----------
   let cur = null;          // 현재 사례
@@ -21,6 +47,7 @@
   let activeQuiz = null;
 
   const video = $("video");
+  const VOLUME_WORKS = (() => { try { const v = document.createElement("video"); v.volume = 0.5; return v.volume === 0.5; } catch { return false; } })();
   const portraitMq = window.matchMedia("(orientation: portrait)");
 
   // ---------- 화면 전환 ----------
@@ -139,6 +166,16 @@
       impactDone = true;
       if (settings.vibrate && navigator.vibrate) navigator.vibrate([120, 60, 220]);
     }
+    // 충돌음 작게: 충돌 구간만 볼륨을 낮춤
+    const duck = settings.softImpact && t >= cur.impactAt - 0.2 && t <= cur.impactAt + 4.5;
+    if (VOLUME_WORKS) {
+      const vol = duck ? 0.2 : 1;
+      if (video.volume !== vol) video.volume = vol;
+    } else {
+      // iOS Safari는 볼륨 조절이 안 되므로 충돌 구간만 음소거
+      const m = settings.muted || duck;
+      if (video.muted !== m) video.muted = m;
+    }
     // 퀴즈 정지 지점
     const targets = reviewQuiz ? [reviewQuiz] : cur.quizzes;
     for (const q of targets) {
@@ -210,12 +247,14 @@
     $("qFeedback").classList.add("hidden");
     $("qNext").classList.add("hidden");
     $("quiz").classList.remove("hidden");
+    sfx("open");
     box.firstChild.focus({ preventScroll: true });
   }
 
   function answer(q, i) {
     answers[q.id] = i;
     const ok = i === q.answer;
+    sfx(ok ? "ok" : "no");
     [...$("qOptions").children].forEach((b, k) => {
       b.disabled = true;
       if (k === q.answer) b.classList.add("correct");
@@ -315,9 +354,22 @@
   // ---------- 설정 ----------
   $("settingsBtn").addEventListener("click", () => {
     $("optVibrate").checked = settings.vibrate;
+    $("optSoftImpact").checked = settings.softImpact;
+    $("optSfx").checked = settings.sfx;
     $("settings").classList.remove("hidden");
   });
   $("optVibrate").addEventListener("change", (e) => { settings.vibrate = e.target.checked; store.set("settings", settings); });
+  $("optSoftImpact").addEventListener("change", (e) => { settings.softImpact = e.target.checked; store.set("settings", settings); });
+  $("optSfx").addEventListener("change", (e) => { settings.sfx = e.target.checked; store.set("settings", settings); });
+
+  // 소리 켜기/끄기
+  function applyMute() {
+    video.muted = settings.muted;
+    $("muteBtn").textContent = settings.muted ? "소리 꺼짐" : "소리 켜짐";
+    $("muteBtn").setAttribute("aria-pressed", String(settings.muted));
+  }
+  $("muteBtn").addEventListener("click", () => { settings.muted = !settings.muted; store.set("settings", settings); applyMute(); });
+  applyMute();
   $("settingsClose").addEventListener("click", () => $("settings").classList.add("hidden"));
 
   // 키보드: 스페이스 재생/정지
