@@ -123,3 +123,154 @@ body.landscape .video-wrap { width: min(100%, calc((100svh - 170px) * 16 / 9)); 
   .q-title { font-size: 18px; }
   .card .ko { font-size: 18px; }
 }
+
+/* ---------- 버튼 보강 ---------- */
+.btn.danger { background: rgba(235,70,60,0.16); border: 1px solid var(--red); color: #ffd9d6; }
+.btn.sm { padding: 8px 12px; font-size: 14px; white-space: nowrap; }
+.btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+.pill.red { background: rgba(235,70,60,0.18); color: #ff9c94; font-weight: 700; }
+
+/* ---------- 홈: 시뮬레이션 카드 ---------- */
+.sim-card {
+  display: grid; grid-template-columns: 220px 1fr; width: 100%; text-align: left; padding: 0; overflow: hidden;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.sim-card:hover { border-color: var(--yel); }
+.sim-card .body { padding: 16px 18px 18px; }
+.sim-card .no { color: var(--yel); font-weight: 800; font-size: 14px; }
+.sim-card .t { font-size: 20px; font-weight: 800; margin: 4px 0; }
+.sim-card .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.sim-card-art { position: relative; background: #0d1830; min-height: 130px; }
+.sim-card-art b { position: absolute; left: 12%; right: 8%; top: 38%; height: 24%; border-radius: 40px 12px 12px 40px; background: #1a2846; border: 2px solid #3a5080; }
+.sim-card-art i { position: absolute; width: 14px; height: 8px; border-radius: 2px; background: var(--grn); top: calc(38% - 6px); z-index: 1; }
+.sim-card-art i:nth-child(1) { left: 22%; } .sim-card-art i:nth-child(2) { left: 42%; background: var(--red); }
+.sim-card-art i:nth-child(3) { left: 62%; top: calc(62% - 2px); } .sim-card-art i:nth-child(4) { left: 82%; top: calc(62% - 2px); background: var(--yel); }
+
+/* ---------- 시뮬레이션 ---------- */
+.sim-clock { font-weight: 800; color: var(--yel); align-self: center; }
+.sim-steps { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0 12px; }
+.sim-steps span { font-size: 13px; padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,0.05); color: var(--muted); }
+.sim-steps span.on { background: var(--yel); color: #111; font-weight: 800; }
+.sim-steps span.past { color: var(--grn); }
+.sim-layout { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr); gap: 16px; align-items: start; }
+.sim-stage { position: relative; background: #0b1528; border: 1px solid var(--line); border-radius: 16px; padding: 8px; }
+.sim-stage canvas { display: block; width: 100%; touch-action: manipulation; cursor: pointer; }
+.sim-banner { margin: 2px 2px 8px; padding: 10px 12px; border-radius: 10px; font-weight: 800; line-height: 1.45; background: rgba(255,255,255,0.06); }
+.sim-banner.warn { background: rgba(255,210,31,0.16); color: var(--yel); }
+.sim-banner.bad { background: rgba(235,70,60,0.18); color: #ffb3ad; }
+.sim-banner.info { background: rgba(80,160,255,0.14); color: #bcd8ff; }
+.sim-legend { display: flex; flex-wrap: wrap; gap: 12px; padding: 6px 4px 2px; }
+.sim-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.sim-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.sim-legend i.sq { border-radius: 2px; }
+.sim-legend i.ring { border: 2px solid var(--yel); background: #cfe0ff; }
+.sim-panel { background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+.sim-panel .q-title { margin-top: 0; }
+.sim-text { line-height: 1.6; }
+.sim-text p { margin: 0 0 10px; }
+.sim-howto { padding-left: 20px; line-height: 1.6; margin: 0 0 10px; }
+.scn-list { display: grid; gap: 8px; margin-top: 8px; }
+.scn { text-align: left; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); line-height: 1.5; }
+.scn:hover { border-color: var(--yel); }
+.scn b { color: var(--yel); }
+.sim-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.sim-actions.stack { display: grid; }
+.sim-actions.stack .btn { text-align: left; font-weight: 700; line-height: 1.45; }
+.sim-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 8px; }
+.sim-stats div { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 8px 10px; display: grid; gap: 2px; }
+.sim-stats span { font-size: 12px; }
+.sim-stats b { font-size: 18px; }
+.sim-log { list-style: none; margin: 12px 0 0; padding: 0; max-height: 220px; overflow: auto; font-size: 14px; line-height: 1.5; }
+.sim-log li { padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.sim-log li .mono { color: var(--muted); display: inline-block; min-width: 36px; }
+.sim-log li.ok { color: #a9ecbe; } .sim-log li.bad { color: #ffb3ad; } .sim-log li.warn { color: #ffe28a; }
+.se-look { padding: 14px; border-radius: 12px; background: rgba(255,255,255,0.05); line-height: 1.6; margin-bottom: 12px; }
+.se-look.bad { background: rgba(235,70,60,0.15); color: #ffc4bf; font-weight: 700; }
+.se-look.ok { background: rgba(80,210,120,0.10); }
+#seActions .btn { width: 100%; text-align: left; }
+.wide-sm { width: 100%; margin-top: 8px; }
+
+.sim-debrief { max-width: 860px; }
+.sim-score { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; padding: 18px; border-radius: 18px; border: 2px solid var(--yel); background: rgba(255,210,31,0.06); }
+.sim-score .big { font-size: 56px; font-weight: 900; color: var(--yel); line-height: 1; }
+.sim-score .big small { font-size: 20px; margin-left: 2px; }
+.kpis { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 8px; }
+.kpis span { display: grid; }
+.kpis b { font-size: 22px; }
+.kpis i { font-style: normal; color: var(--muted); font-size: 13px; }
+.eval-list { display: grid; gap: 8px; }
+.ev { display: grid; grid-template-columns: 32px 1fr; gap: 10px; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,0.05); line-height: 1.5; }
+.ev .mk { font-weight: 900; font-size: 20px; text-align: center; }
+.ev.ok .mk { color: var(--grn); } .ev.mid .mk { color: var(--yel); } .ev.no .mk { color: var(--red); }
+.why-list { line-height: 1.8; padding-left: 20px; }
+.sim-end-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+
+@media (max-width: 860px) {
+  .sim-layout { grid-template-columns: 1fr; }
+  .sim-card { grid-template-columns: 1fr; }
+  .sim-card-art { min-height: 110px; }
+}
+
+/* ---------- AI 교관 챗봇 ---------- */
+.chat-fab {
+  position: fixed; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20;
+  display: inline-flex; align-items: center; gap: 6px; padding: 12px 18px; border-radius: 999px; border: 0;
+  background: var(--yel); color: #111; font-weight: 900; font-size: 16px; box-shadow: 0 8px 26px rgba(0,0,0,0.45);
+}
+.chat-panel {
+  position: fixed; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 30;
+  width: min(420px, calc(100vw - 32px)); height: min(640px, calc(100svh - 32px));
+  display: flex; flex-direction: column; background: #0f1a2f; border: 1px solid var(--line); border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55); overflow: hidden;
+}
+body.chat-open .chat-fab { display: none; }
+.chat-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.chat-head .pill { margin-left: 4px; font-size: 12px; }
+.chat-head-actions { display: flex; gap: 6px; }
+.chat-head-actions .icon-btn { padding: 6px 10px; font-size: 13px; }
+.chat-settings { padding: 12px; border-bottom: 1px solid var(--line); display: grid; gap: 6px; max-height: 55%; overflow: auto; background: rgba(255,255,255,0.02); }
+.chat-settings hr { border: 0; border-top: 1px solid var(--line); width: 100%; margin: 6px 0; }
+.chat-settings .row { padding: 2px 0; }
+.lbl { font-size: 13px; font-weight: 800; color: var(--muted); margin-top: 4px; }
+.row2 { display: flex; gap: 6px; }
+.chat-settings select, .chat-settings input[type=password], .chat-settings input[type=text], .chat-form textarea {
+  flex: 1; min-width: 0; font: inherit; font-size: 15px; color: var(--text); background: #0a1222; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px;
+}
+.chat-log { flex: 1; overflow: auto; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+.msg { max-width: 88%; padding: 10px 12px; border-radius: 14px; line-height: 1.6; font-size: 15px; word-break: keep-all; overflow-wrap: anywhere; }
+.msg p { margin: 0 0 6px; } .msg p:last-child { margin-bottom: 0; }
+.msg ul, .msg ol { margin: 4px 0 6px; padding-left: 20px; }
+.msg code { background: rgba(255,255,255,0.08); padding: 1px 5px; border-radius: 5px; }
+.msg.user { align-self: flex-end; background: var(--yel); color: #111; white-space: pre-wrap; }
+.msg.assistant { align-self: flex-start; background: rgba(255,255,255,0.06); }
+.msg.note { align-self: center; max-width: 100%; font-size: 13px; color: var(--muted); background: none; padding: 2px 6px; text-align: center; }
+.msg.note.err { color: #ffb3ad; }
+.dots3 { display: inline-flex; gap: 4px; }
+.dots3 i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); animation: blink 1.2s infinite; }
+.dots3 i:nth-child(2) { animation-delay: 0.2s; } .dots3 i:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink { 0%, 80%, 100% { opacity: 0.25; } 40% { opacity: 1; } }
+.chat-chips { display: flex; gap: 6px; flex-wrap: wrap; padding: 0 12px 8px; }
+.chip { font-size: 13px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--line); text-align: left; }
+.chip:hover { border-color: var(--yel); }
+.chat-form { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--line); align-items: flex-end; }
+.chat-form textarea { resize: none; max-height: 140px; line-height: 1.45; }
+.chat-form .btn { padding: 10px 16px; }
+@media (max-width: 520px) {
+  .chat-panel { right: 0; bottom: 0; width: 100vw; height: 100svh; border-radius: 0; }
+  .chat-fab { padding: 10px 14px; font-size: 15px; }
+}
+.sim-stage .sim-actions { margin: 0 2px 8px; }
+.sim-stage .sim-actions:empty { display: none; }
+.sim-stage .sim-stats { margin: 0 2px 8px; }
+.sim-stage .sim-stats:empty { display: none; }
+.chat-settings { grid-template-columns: minmax(0, 1fr); }
+.chat-settings > * { min-width: 0; }
+.chat-settings select { width: 100%; text-overflow: ellipsis; }
+.row2 > select, .row2 > input { flex: 1 1 0; width: 0; }
+@media (max-width: 520px) {
+  .sim-stage .sim-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+  .sim-stats div { padding: 6px 8px; }
+  .sim-stats b { font-size: 16px; }
+  .sim-stats span { font-size: 11px; }
+  .sim-stage .sim-actions .btn { padding: 10px 14px; font-size: 15px; }
+}

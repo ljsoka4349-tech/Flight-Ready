@@ -52,7 +52,7 @@
 
   // ---------- 화면 전환 ----------
   function show(id) {
-    for (const s of ["home", "player", "result"]) $(s).classList.toggle("hidden", s !== id);
+    for (const s of ["home", "player", "result", "sim"]) $(s).classList.toggle("hidden", s !== id);
     window.scrollTo(0, 0);
   }
 
@@ -381,4 +381,5 @@
 
   applyOrientation(false);
   renderHome();
+  window.FR_APP = { home: renderHome };
 })();

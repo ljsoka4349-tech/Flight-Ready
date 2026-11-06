@@ -20,7 +20,59 @@
     <h1 class="h1">객실 사고사례 훈련</h1>
     <p class="muted">영상을 보다가 멈추는 지점에서 직접 판단해 보세요.</p>
     <div id="caseList" class="case-list"></div>
+
+    <h2 class="h2">직접 지휘해 보기</h2>
+    <button class="sim-card" data-open-sim>
+      <div class="sim-card-art" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+      <div class="body">
+        <div class="no">비상탈출 시뮬레이션</div>
+        <div class="t">객실 책임 승무원이 되어 140명을 탈출시키세요</div>
+        <div class="muted">벨트 점검 → 충격 대비 → 출구 판단 → 탈출 지휘. 판단마다 결과가 달라집니다.</div>
+        <div class="meta"><span class="pill">시나리오 3종 + 무작위</span><span class="pill">약 3분</span><span class="pill">AI 교관 해설</span></div>
+      </div>
+    </button>
   </section>
+
+  <!-- 비상탈출 시뮬레이션 -->
+  <section id="sim" class="screen hidden">
+    <header class="top">
+      <button id="simBack" class="icon-btn" aria-label="목록으로">← 목록</button>
+      <div class="player-title">비상탈출 시뮬레이션</div>
+      <div class="top-actions"><span id="simClock" class="mono sim-clock"></span><button id="simSound" class="icon-btn" aria-pressed="false">소리 켜짐</button></div>
+    </header>
+    <div id="simSteps" class="sim-steps"></div>
+    <div id="simMain" class="sim-layout">
+      <div class="sim-stage">
+        <div id="simBanner" class="sim-banner hidden"></div>
+        <div id="simActions" class="sim-actions"></div>
+        <div id="simStats" class="sim-stats"></div>
+        <canvas id="simCanvas" aria-label="객실 평면도. 출구를 눌러 확인하고 조작합니다."></canvas>
+        <div class="sim-legend muted small">
+          <span><i style="background:#cfe0ff"></i>착석</span><span><i style="background:#fff"></i>이동</span><span><i style="background:#eb463c"></i>부상</span><span><i class="ring"></i>짐 챙김</span>
+          <span><i class="sq" style="background:#50d278"></i>개방</span><span><i class="sq" style="background:#eb463c"></i>차단</span>
+        </div>
+      </div>
+      <aside class="sim-panel">
+        <h2 id="simTitle" class="q-title"></h2>
+        <div id="simText" class="sim-text"></div>
+        <ol id="simLog" class="sim-log"></ol>
+      </aside>
+    </div>
+    <div id="simDebrief" class="sim-debrief hidden"></div>
+  </section>
+
+  <!-- 시뮬레이션: 출구 확인 -->
+  <div id="simExit" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="seTitle">
+    <div class="sheet">
+      <div class="q-head"><span class="pill yel">출구</span><span class="muted" id="seState"></span></div>
+      <h2 id="seTitle" class="q-title"></h2>
+      <div id="seLook" class="se-look"></div>
+      <div id="seActions" class="options"></div>
+      <p id="seNote" class="muted small"></p>
+      <p class="muted small">이 창이 열려 있는 동안 시뮬레이션은 잠시 멈춥니다.</p>
+      <button id="seClose" class="btn ghost wide-sm">닫기</button>
+    </div>
+  </div>
 
   <!-- 플레이어 -->
   <section id="player" class="screen hidden">
@@ -99,5 +151,7 @@
 
   <script src="js/cases.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/sim.js"></script>
+  <script src="js/chat.js"></script>
 </body>
 </html>

@@ -31,6 +31,8 @@
         <a href="#screens">화면별 사용법</a>
         <a href="#flow">학습 흐름과 이수 기준</a>
         <a href="#sound">소리·진동 설정</a>
+        <a href="#sim">비상탈출 시뮬레이션</a>
+        <a href="#chatbot">AI 교관 챗봇</a>
         <a href="#faq">자주 묻는 질문</a>
       </nav>
 
@@ -187,6 +189,29 @@
       <p>플레이어의 <b>소리 켜짐 / 소리 꺼짐</b> 버튼은 영상 소리와 퀴즈 효과음을 모두 끕니다. 모든 설정은 쓰고 있는 브라우저에 저장되어 다음에 열어도 유지됩니다.</p>
       <p>강의실에서 여러 명이 함께 볼 때는 이어폰 사용을 권합니다. 하나의 화면을 프로젝터로 함께 볼 때는 충돌음 작게를 켜 두는 것이 좋습니다.</p>
 
+      <h2 class="h2" id="sim">비상탈출 시뮬레이션</h2>
+      <p>첫 화면의 <b>직접 지휘해 보기 → 비상탈출 시뮬레이션</b>을 누릅니다. 내가 객실 책임 승무원이 되어 승객 140명, 출구 8개(L1~L4, R1~R4)인 객실을 지휘합니다. 시나리오 3종 중 하나를 고르거나 무작위로 시작합니다.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>단계</th><th>할 일</th></tr></thead>
+        <tbody>
+          <tr><td>① 착륙 전 점검</td><td>15초 안에 좌석벨트를 매지 않은 승객(깜박이는 주황색 점) 6명을 찾아 누릅니다.</td></tr>
+          <tr><td>② 충격 대비</td><td>이상 징후가 뜨면 6초 안에 올바른 행동을 고릅니다.</td></tr>
+          <tr><td>③ 상황 판단</td><td>기체가 멈추면 출구를 눌러 <b>창밖 확인</b>을 하고, 위험이 보이면 <b>조종실에 보고</b>하거나 직접 <b>탈출 개시</b>를 합니다. 아무 판단도 하지 않으면 90초 뒤에야 조종실이 탈출을 지시합니다.</td></tr>
+          <tr><td>④ 탈출 지휘</td><td>안전한 출구는 <b>개방</b>, 화재·잔해가 있는 출구는 <b>차단</b>합니다. 열어 보니 고장(슬라이드 기내 팽창, 문 변형)인 출구는 바로 차단해 승객을 다른 출구로 보냅니다. <b>"짐 버려!"</b> 버튼으로 짐을 챙기는 승객(노란 테두리)을 줄입니다.</td></tr>
+          <tr><td>⑤ 결과</td><td>점수, 탈출 시간, 부상자와 원인, 판단별 O·△·X 평가를 보여 줍니다. <b>AI 교관에게 결과 해설 듣기</b>로 바로 피드백을 받을 수 있습니다.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">출구 확인 창이 열려 있는 동안에는 시간이 멈춥니다. 휴대폰에서는 평면도가 세로로, PC에서는 가로로 그려집니다. 승객 속도·출구 처리량 같은 수치는 교육용으로 단순화한 모델입니다.</p>
+
+      <h2 class="h2" id="chatbot">AI 교관 챗봇</h2>
+      <p>모든 화면 오른쪽 아래의 <b>🤖 AI 교관</b> 버튼을 누르면 질문할 수 있습니다. 지금 보고 있는 화면(영상, 퀴즈, 시뮬레이션 결과)을 함께 참고해서 답합니다. 퀴즈를 푸는 중에는 정답 대신 힌트부터 줍니다.</p>
+      <ul>
+        <li><b>설정 → 모델</b>: 쓸 Claude 모델을 고릅니다. <b>↻ 최신 모델 불러오기</b>를 누르면 지금 쓸 수 있는 최신 모델 목록을 받아 옵니다.</li>
+        <li><b>답변 깊이</b>: 빠르게(low)가 기본입니다. 어려운 질문은 보통·깊게를 고르세요(느리고 비용이 더 듭니다).</li>
+        <li>답변이 길어지면 <b>멈춤</b>을 눌러 중단할 수 있고, <b>새 대화</b>로 기록을 지울 수 있습니다.</li>
+        <li>AI 답변은 틀릴 수 있습니다. 절차와 구령은 반드시 소속 기관 매뉴얼로 확인하세요.</li>
+      </ul>
+
       <h2 class="h2" id="faq">자주 묻는 질문</h2>
       <div class="faq">
         <details><summary>영상을 앞으로 넘길 수 없어요</summary><p>처음 수강할 때는 일부러 막아 두었습니다. 이미 본 구간으로 되감기는 됩니다. 3문항을 모두 맞혀 이수하면 진행 바를 눌러 원하는 장면으로 이동할 수 있습니다.</p></details>
@@ -197,6 +222,8 @@
         <details><summary>진동이 안 와요</summary><p>아이폰과 PC 브라우저는 웹 진동을 지원하지 않습니다. 안드로이드에서는 설정의 진동 항목과 휴대폰 무음·진동 설정을 확인하세요.</p></details>
         <details><summary>아이폰에서 충돌 장면 소리가 아예 안 나요</summary><p>‘충돌음 작게’가 켜져 있으면 아이폰은 그 구간만 음소거합니다. 소리를 듣고 싶다면 설정에서 끄세요.</p></details>
         <details><summary>‘구령 듣기’가 아무 소리가 없어요</summary><p>브라우저 음성 읽기 기능을 쓰므로, 기기에 한국어 음성이 없으면 소리가 나지 않거나 다른 목소리로 읽습니다. 지원하지 않는 브라우저에서는 안내 창이 뜹니다.</p></details>
+        <details><summary>챗봇이 '키 필요'라고 나와요</summary><p>교관이 서버에 API 키를 아직 설정하지 않은 상태입니다. 교관에게 문의하거나, 개인 Anthropic API 키가 있다면 챗봇 <b>설정</b>에 넣고 저장하세요.</p></details>
+        <details><summary>챗봇이 '접근 코드가 맞지 않습니다'라고 해요</summary><p>수업용 접근 코드가 설정되어 있습니다. 교관에게 받은 코드를 챗봇 <b>설정 → 수업 접근 코드</b>에 넣으세요.</p></details>
         <details><summary>실제 사고 영상인가요?</summary><p>아닙니다. NTSB 공개 자료를 바탕으로 도형으로 그린 교육용 재구성 영상입니다.</p></details>
       </div>
     </section>
@@ -206,6 +233,7 @@
       <p class="lead">사고사례는 <code>js/cases.js</code> 파일 하나에 모여 있어, 코드를 거의 건드리지 않고 문항을 고치거나 사례를 늘릴 수 있습니다.</p>
       <nav class="toc" aria-label="목차">
         <a href="#run">실행과 배포</a>
+        <a href="#ai">AI 교관 챗봇 설정 (API 키)</a>
         <a href="#files">파일 구성</a>
         <a href="#edit">문항·해설 고치기</a>
         <a href="#add">사고사례 추가하기</a>
@@ -224,6 +252,28 @@
       <h3>교육생에게 배포하기</h3>
       <p>GitHub Pages, Netlify, Vercel 같은 정적 호스팅에 저장소 폴더를 그대로 올리면 됩니다. 이 설명서도 함께 배포되어 <code>/guide.html</code> 주소로 열리고, 앱 첫 화면의 <b>설명서</b> 버튼과 연결됩니다.</p>
 
+      <h2 class="h2" id="ai">AI 교관 챗봇 설정 (API 키)</h2>
+      <p>챗봇은 Vercel 서버 함수(<code>api/</code> 폴더)를 거쳐 Claude API를 부릅니다. 키를 넣는 방법은 두 가지이며, 둘 다 있으면 학생이 넣은 개인 키를 먼저 씁니다.</p>
+      <h3>방법 1 · 서버 키 (수업용 권장)</h3>
+      <ol>
+        <li><a href="https://console.anthropic.com/">Anthropic Console</a>에서 API 키를 만듭니다.</li>
+        <li>Vercel 대시보드 → 프로젝트 <b>flight-ready</b> → <b>Settings → Environment Variables</b>에서 <code>ANTHROPIC_API_KEY</code>를 추가합니다.</li>
+        <li><b>Deployments</b>에서 최신 배포를 <b>Redeploy</b>하면 적용됩니다. 학생은 키 없이 바로 질문할 수 있습니다.</li>
+      </ol>
+      <div class="table-wrap"><table>
+        <thead><tr><th>환경변수</th><th>필수</th><th>설명</th></tr></thead>
+        <tbody>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>예</td><td>서버에서 쓸 API 키. 브라우저로 내보내지 않습니다.</td></tr>
+          <tr><td><code>CHAT_ACCESS_CODE</code></td><td>아니요</td><td>설정하면 이 코드를 아는 사람만 서버 키로 질문할 수 있습니다. 주소가 밖으로 퍼져 요금이 나가는 것을 막을 때 쓰세요.</td></tr>
+          <tr><td><code>CHAT_DEFAULT_MODEL</code></td><td>아니요</td><td>기본 모델 ID (예: <code>claude-sonnet-5-5</code>). 없으면 최신 Opus를 기본으로 고릅니다.</td></tr>
+        </tbody>
+      </table></div>
+      <h3>방법 2 · 개인 키</h3>
+      <p>챗봇 <b>설정 → 개인 Anthropic API 키</b>에 넣고 저장합니다. 키는 그 브라우저에만 저장되고, 질문할 때 이 사이트의 서버 함수로만 전달됩니다. 공용 PC에서는 쓴 뒤 칸을 비우고 저장해 지우세요.</p>
+      <h3>최신 모델 자동 불러오기</h3>
+      <p><b>↻ 최신 모델 불러오기</b>는 Models API로 그 키에서 쓸 수 있는 모델을 최신순으로 받아 오고, 계열(Opus·Sonnet·Haiku·Fable)마다 가장 최근 모델에 ‘최신’을 표시합니다. 키가 있으면 하루에 한 번 자동으로도 새로 받습니다. 비용을 줄이려면 Sonnet이나 Haiku를 고르세요.</p>
+      <p class="muted">내 컴퓨터에서 챗봇까지 시험하려면 <code>python3 -m http.server</code> 대신 <code>npm install</code> 후 <code>npx vercel dev</code>로 실행해야 서버 함수가 동작합니다.</p>
+
       <h2 class="h2" id="files">파일 구성</h2>
       <div class="table-wrap"><table>
         <thead><tr><th>파일</th><th>역할</th></tr></thead>
@@ -234,6 +284,9 @@
           <tr><td><code>css/guide.css</code></td><td>설명서 디자인</td></tr>
           <tr><td><code>js/cases.js</code></td><td>사고사례 내용 (영상 경로, 문항·해설, 정지 시점, 교훈, 구령)</td></tr>
           <tr><td><code>js/app.js</code></td><td>동작 (재생, 자동 정지, 채점, 복습, 저장)</td></tr>
+          <tr><td><code>js/sim.js</code></td><td>비상탈출 시뮬레이션 (시나리오, 승객 이동, 평가)</td></tr>
+          <tr><td><code>js/chat.js</code></td><td>AI 교관 챗봇 화면 (모델 선택, 키 설정, 대화)</td></tr>
+          <tr><td><code>api/</code></td><td>Vercel 서버 함수: <code>chat.js</code> 질문 전달, <code>models.js</code> 최신 모델 목록, <code>config.js</code> 연결 상태</td></tr>
           <tr><td><code>media/</code></td><td>세로·가로 영상과 포스터 이미지</td></tr>
           <tr><td><code>tools/</code></td><td>영상과 음향을 다시 만드는 스크립트</td></tr>
         </tbody>

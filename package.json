@@ -1,0 +1,10 @@
+{
+  "name": "flight-ready",
+  "private": true,
+  "type": "module",
+  "description": "Flight Ready 객실 사고사례 훈련 · AI 교관 챗봇 서버 함수",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0"
+  }
+}
